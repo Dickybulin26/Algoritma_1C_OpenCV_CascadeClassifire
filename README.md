@@ -274,6 +274,10 @@ Identifikasi (1:N): Diberikan wajah V, hitung f(V) dan bandingkan jaraknya denga
 
 Dengan pendekatan metric learning ini, FaceNet memecahkan masalah skalabilitas. Wajah baru dapat ditambahkan ke database kapan saja hanya dengan menghitung dan menyimpan embedding 128-D mereka, tanpa perlu melatih ulang seluruh model.
 
+# **Sumber**
+- https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Schroff_FaceNet_A_Unified_2015_CVPR_paper.pdf
+- https://www.sciencedirect.com/science/article/pii/S2468227623004611
+
 <hr>
 
 # Installation

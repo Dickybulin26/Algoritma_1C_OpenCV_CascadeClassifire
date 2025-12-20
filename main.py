@@ -1,4 +1,6 @@
 import os
+# Suppress OpenCV internal logs (warnings/errors about missing cameras)
+os.environ["OPENCV_LOG_LEVEL"] = "OFF"
 from os import listdir
 from PIL import Image
 from numpy import asarray
@@ -14,7 +16,7 @@ import sys
 # print(tf.config.list_physical_devices('GPU'))
 
 print("🔍 Initializing camera system...")
-
+   
 # Try camera index 1 first (external), then 0 (internal/default)
 cap = cv2.VideoCapture(1)
 if not cap.isOpened():

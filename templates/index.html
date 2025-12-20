@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --text-color: #E0E0E0;
+            --accent-color: #BB86FC;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            background-color: var(--card-color);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-weight: 300; letter-spacing: 2px;
+        }
+        .container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .monitor-frame {
+            background-color: #000;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(187, 134, 252, 0.2);
+            border: 1px solid #333;
+        }
+        img.video-feed {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .status-panel {
+            margin-top: 2rem;
+            text-align: center;
+            color: #888;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: rgba(187, 134, 252, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FACE RECOGNITION LIVE</h1>
+    </header>
+
+    <div class="container">
+        <div class="monitor-frame">
+            <img src="{{ url_for('video_feed') }}" alt="Live Video Feed" class="video-feed" width="600">
+        </div>
+
+        <div class="status-panel">
+            <p>System Status: <span class="status-badge">Active</span></p>
+            <p><small>Running FaceNet Model • OpenCV Cascade Classifier</small></p>
+        </div>
+    </div>
+</body>
+</html>
